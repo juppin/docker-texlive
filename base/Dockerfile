@@ -18,6 +18,8 @@ run apt-get update && apt-get -y dist-upgrade && \
         unzip \
         wget \
         && \
+    # clean up
+    apt-get autoclean && apt-get clean && \
     # would get done before each compile otherwise
     luaotfload-tool --update && \
     # directory/mount-point for work
