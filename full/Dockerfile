@@ -1,7 +1,7 @@
-from dpollet/texlive:base
+from juppin/texlive:base
 label description "Full TeXlive installation"
 
-run apt install --yes --no-install-recommends \
+run apt-get -y --no-install-recommends install \
         texlive-full \
         && \
     # would get done before each compile otherwise

@@ -1,9 +1,9 @@
-from dpollet/texlive:full
+from juppin/texlive:full
 label description "Full TeXlive with support for installing Pharo & Pillar"
 
 run dpkg --add-architecture i386 && \
-    apt update && \
-    apt install --yes --no-install-recommends \
+    apt-get update && \
+    apt-get -y --no-install-recommends install \
         libx11-6:i386 \
         libgl1-mesa-glx:i386 \
         libfontconfig1:i386 \

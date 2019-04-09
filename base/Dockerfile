@@ -1,11 +1,10 @@
 from ubuntu:latest
-label maintainer "Damien Pollet <damien.pollet@gmail.com>" \
-      description "Minimal TeXlive installation supporting SBAbook documents"
+label description "Minimal TeXlive installation supporting SBAbook documents"
 
 env LANG=C.UTF-8 DEBIAN_FRONTEND=noninteractive
-run apt update && apt upgrade --yes && \
+run apt-get update && apt-get -y dist-upgrade && \
     # install build packages
-    apt install --yes --no-install-recommends \
+    apt-get -y --no-install-recommends install \
         bsdmainutils \
         git \
         latexmk \
