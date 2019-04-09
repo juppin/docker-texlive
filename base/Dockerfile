@@ -1,4 +1,4 @@
-from ubuntu:latest
+from debian:stable
 label description "Minimal TeXlive installation supporting SBAbook documents"
 
 env LANG=C.UTF-8 DEBIAN_FRONTEND=noninteractive
