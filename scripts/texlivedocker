@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+CMD=${0##*/}
+ARGS=${@}
+
+if [ x$CMD = xtexlivedocker ] ; then
+  echo "create a symlink with name of cmd in docker container"
+  echo "example: ln -s /path/to/texlivedocker /usr/local/bin/latexmk"
+  exit 1
+fi
+
+docker run --interactive --rm --workdir "$(pwd)" --volume "$(pwd)":"$(pwd)" --user $(id -u):$(id -g) juppin/texlive:full $CMD $ARGS
